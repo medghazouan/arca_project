@@ -1,0 +1,34 @@
+{
+  "regulation_id": "REG_7C238550C006",
+  "regulation_title": "GDPR Amendment 2025",
+  "date_of_law": "2025-01-15",
+  "date_processed": "2025-12-04",
+  "total_risks_flagged": 2,
+  "risks": [
+    {
+      "policy_id": "data_retention_policy",
+      "severity": "HIGH",
+      "divergence_summary": "Company policy allows 90 days vs regulation requires 30 days",
+      "conflicting_policy_excerpt": "Customer data will be retained for 90 days after deletion request",
+      "new_rule_excerpt": "All customer data must be deleted within 30 days of request",
+      "recommendation": "Update data retention policy to comply with 30-day requirement"
+    },
+    {
+      "policy_id": "privacy_policy",
+      "severity": "MEDIUM",
+      "divergence_summary": "Missing automated deletion mechanism requirement",
+      "conflicting_policy_excerpt": "Manual review required for all deletion requests",
+      "new_rule_excerpt": "Companies must provide automated deletion mechanisms",
+      "recommendation": "Implement automated deletion system for customer requests"
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}

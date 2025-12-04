@@ -1,0 +1,58 @@
+{
+  "regulation_id": "REG_12E9DCCB9A76",
+  "regulation_title": "Data Protection Amendment Act 2025",
+  "date_of_law": "2025-06-01",
+  "date_processed": "2025-12-04",
+  "total_risks_flagged": 5,
+  "risks": [
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy completely omits specific requirements for handling customer data deletion requests, including mandatory timelines, automated processes, logging, confirmation, and third-party obligations, which are critical components of the new regulation.",
+      "conflicting_policy_excerpt": "Data are kept for a period strictly necessary for the purposes for which they were collected. Once these purposes have been fulfilled, data must be either securely deleted or anonymised...",
+      "new_rule_excerpt": "All personal customer data must be permanently deleted within 30 days of receiving a deletion request from the customer. Companies must implement automated deletion mechanisms... Deletion logs must be maintained for audit purposes for a minimum period of 5 years. Customers must receive confirmation of deletion within 48 hours...",
+      "recommendation": "Draft a new policy section or standalone policy specifically detailing the process for handling customer data deletion requests, ensuring compliance with all six points of Article 12, including timelines, automated mechanisms, logging, confirmation, and third-party processor management."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy allows anonymisation as an alternative to deletion, which directly conflicts with the regulation's requirement for permanent deletion of customer data upon request.",
+      "conflicting_policy_excerpt": "Anonymised, i.e. transformed so that individuals can no longer be identified.",
+      "new_rule_excerpt": "All personal customer data must be permanently deleted within 30 days of receiving a deletion request from the customer.",
+      "recommendation": "Update the policy to explicitly mandate permanent data deletion for customer requests, disallowing anonymisation as an alternative for such requests, and address all other missing regulatory requirements."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy's logging requirement is conditional ('where possible') and lacks a specific retention period, directly conflicting with the regulation's mandatory 5-year log retention.",
+      "conflicting_policy_excerpt": "Where possible, deletion or anonymisation operations are documented (logs, reports) to demonstrate that this policy has been correctly applied.",
+      "new_rule_excerpt": "Deletion logs must be maintained for audit purposes for a minimum period of 5 years.",
+      "recommendation": "Update Policy 3. Traceability to mandate deletion log maintenance for a minimum of 5 years, removing the 'where possible' clause, and address all other missing requirements from Article 12."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy's general log retention period of 6-12 months directly contradicts the new regulation's requirement to maintain deletion logs for a minimum of 5 years.",
+      "conflicting_policy_excerpt": "Technical and security logs: Usually between 6 and 12 months, depending on security needs and regulatory requirements.",
+      "new_rule_excerpt": "Deletion logs must be maintained for audit purposes for a minimum period of 5 years.",
+      "recommendation": "Update the internal policy to explicitly state that deletion logs must be retained for a minimum of 5 years, overriding or clarifying the general technical and security log retention period."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy allows for retention of data beyond the 30-day period for legal or tax reasons, directly conflicting with the new regulation's strict 30-day permanent deletion requirement without stated exceptions.",
+      "conflicting_policy_excerpt": "requests for deletion must be honoured, unless the Company is legally obliged to retain certain data for a longer period (for example for tax or legal reasons).",
+      "new_rule_excerpt": "All personal customer data must be permanently deleted within 30 days of receiving a deletion request from the customer.",
+      "recommendation": "Revise the policy to align deletion timelines and exceptions strictly with Article 12, ensuring no data is retained beyond 30 days post-request unless explicitly permitted by the new regulation."
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}
