@@ -1,0 +1,58 @@
+{
+  "regulation_id": "REG_E0413A5EF416",
+  "regulation_title": "test_regulation",
+  "date_of_law": "N/A",
+  "date_processed": "2025-12-06",
+  "total_risks_flagged": 5,
+  "risks": [
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy lacks specific requirements for data deletion within 30 days of a request and the mandatory use of automated deletion systems, as required by the new regulation.",
+      "conflicting_policy_excerpt": "Data are kept for a period strictly necessary for the purposes for which they were collected. Once these purposes have been fulfilled, data must be either securely deleted or anonymised, so that the individuals concerned can no longer be identified.",
+      "new_rule_excerpt": "Article 1: All customer personal data must be deleted within 30 days of receiving a deletion request. Automated deletion systems are mandatory.",
+      "recommendation": "Update the internal policy to explicitly include the 30-day deletion timeframe for customer requests and mandate the implementation of automated deletion systems."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The policy allows anonymisation as an alternative to deletion, lacks a specific 30-day timeframe for processing deletion requests, and does not mandate automated deletion systems, all of which are required by the new regulation.",
+      "conflicting_policy_excerpt": "2. **Deletion or anonymisation** ... At the end of the retention period, data must be: ... or - **Anonymised**, i.e. transformed so that individuals can no longer be identified.",
+      "new_rule_excerpt": "Article 1: All customer personal data must be deleted within 30 days of receiving a deletion request. Automated deletion systems are mandatory.",
+      "recommendation": "Update the internal policy to explicitly mandate deletion (not anonymisation) within 30 days of receiving a customer deletion request and require the implementation of automated deletion systems."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy's retention period for technical and security logs (6-12 months) directly conflicts with the new regulation requiring deletion of all customer personal data within 30 days upon request, assuming logs contain personal data.",
+      "conflicting_policy_excerpt": "- **Technical and security logs**: - Usually between **6 and 12 months**, depending on security needs and regulatory requirements.",
+      "new_rule_excerpt": "Article 1: All customer personal data must be deleted within 30 days of receiving a deletion request. Automated deletion systems are mandatory.",
+      "recommendation": "Update the policy to ensure technical and security logs containing customer personal data are subject to the 30-day deletion requirement upon request, including implementing automated deletion processes for such data."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy allows for exceptions to data deletion based on legal retention obligations, which directly conflicts with the new regulation's mandate for 'All customer personal data' to be deleted, and it also fails to specify the mandatory 30-day deletion timeframe and automated deletion systems.",
+      "conflicting_policy_excerpt": "Where the law so requires, requests for deletion must be honoured, unless the Company is legally obliged to retain certain data for a longer period (for example for tax or legal reasons).",
+      "new_rule_excerpt": "Article 1: All customer personal data must be deleted within 30 days of receiving a deletion request. Automated deletion systems are mandatory.",
+      "recommendation": "Immediately update the policy to explicitly include the mandatory 30-day deletion timeframe and the requirement for automated deletion systems, and clarify with legal counsel if the new regulation allows for any exceptions to the 'All customer personal data' deletion mandate."
+    },
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy lacks specific provisions for the mandatory 30-day deletion timeline and the requirement for automated deletion systems, which are critical mandates in the new regulation.",
+      "conflicting_policy_excerpt": "The purpose of this policy is to define the rules applicable to the ... deletion of data collected and processed by the Company.",
+      "new_rule_excerpt": "All customer personal data must be deleted within 30 days of receiving a deletion request. Automated deletion systems are mandatory.",
+      "recommendation": "Update the policy to explicitly include the mandatory 30-day deletion timeline for customer personal data upon request and the requirement for automated deletion systems."
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}

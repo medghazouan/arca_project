@@ -9,14 +9,16 @@ TSD Requirements:
 - Framework: FastAPI (recommended) or Flask
 """
 
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, status, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, validator
 from typing import Optional, List, Dict, Any
 from datetime import datetime
 import uvicorn
+import os
+import tempfile
 
-from arca_pipeline import ARCASystem
+from arca_pipeline import ARCASystem, analyze_regulation_from_file_smart
 
 # ─────────────────────────────────────────────────────────
 # API MODELS (Pydantic Schemas)
@@ -287,6 +289,129 @@ async def analyze_regulation(request: RegulationAnalysisRequest):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Analysis failed: {str(e)}"
         )
+
+
+@app.post(
+    "/analyze_regulation_file",
+    response_model=RegulationAnalysisResponse,
+    status_code=status.HTTP_200_OK,
+    responses={
+        200: {"description": "Analysis completed successfully"},
+        400: {"model": ErrorResponse, "description": "Invalid request"},
+        500: {"model": ErrorResponse, "description": "Internal server error"},
+        503: {"model": ErrorResponse, "description": "Service unavailable"}
+    },
+    tags=["Analysis"],
+    summary="Analyze regulation from PDF or TXT file"
+)
+async def analyze_regulation_file(
+    file: UploadFile = File(..., description="PDF or TXT file containing regulation"),
+    date_of_law: Optional[str] = Form(None, description="Date of law (YYYY-MM-DD)"),
+    regulation_title: Optional[str] = Form(None, description="Regulation title"),
+    summarize: bool = Form(True, description="Auto-summarize if text exceeds 2000 words")
+):
+    """
+    Analyze a regulation from an uploaded PDF or TXT file
+    
+    **Smart Document Processing:**
+    1. Extracts text from PDF or TXT file
+    2. Cleans text (removes page numbers, artifacts, etc.)
+    3. Summarizes if document exceeds 2000 words
+    4. Analyzes with ARCA pipeline
+    
+    **Supported File Types:**
+    - PDF (.pdf) - Extracts text from PDF documents
+    - Text (.txt) - Reads plain text files
+    
+    **Input Requirements:**
+    - File size: Max 10MB
+    - For PDFs: Text-based (not scanned images)
+    - Auto-summarization keeps content under 2000 words
+    
+    **Output:**
+    - Standard ARCA JSON report
+    - Includes document processing metadata
+    
+    **Processing Time:** Typically 15-45 seconds depending on file size
+    """
+    
+    # Check if system is initialized
+    if arca_system is None:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="ARCA system not initialized. Check server logs."
+        )
+    
+    # Validate file type
+    file_ext = os.path.splitext(file.filename)[1].lower()
+    if file_ext not in ['.pdf', '.txt', '.md']:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Unsupported file type: {file_ext}. Please upload .pdf or .txt files."
+        )
+    
+    # Validate date format if provided
+    if date_of_law:
+        try:
+            datetime.strptime(date_of_law, '%Y-%m-%d')
+        except ValueError:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="date_of_law must be in YYYY-MM-DD format"
+            )
+    
+    try:
+        # Save uploaded file to temporary location
+        with tempfile.NamedTemporaryFile(delete=False, suffix=file_ext) as temp_file:
+            content = await file.read()
+            temp_file.write(content)
+            temp_file_path = temp_file.name
+        
+        # Check file size (max 10MB)
+        file_size_mb = len(content) / (1024 * 1024)
+        if file_size_mb > 10:
+            os.unlink(temp_file_path)
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"File too large: {file_size_mb:.2f}MB. Maximum size is 10MB."
+            )
+        
+        # Use filename as title if not provided
+        if regulation_title is None:
+            regulation_title = os.path.splitext(file.filename)[0]
+        
+        # Process document and run ARCA analysis
+        result = analyze_regulation_from_file_smart(
+            file_path=temp_file_path,
+            date_of_law=date_of_law,
+            regulation_title=regulation_title,
+            summarize=summarize
+        )
+        
+        # Cleanup temporary file
+        os.unlink(temp_file_path)
+        
+        return RegulationAnalysisResponse(**result)
+    
+    except ValueError as e:
+        # Document processing errors
+        if 'temp_file_path' in locals():
+            os.unlink(temp_file_path)
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Document processing failed: {str(e)}"
+        )
+    
+    except Exception as e:
+        # Internal errors
+        if 'temp_file_path' in locals():
+            os.unlink(temp_file_path)
+        print(f"❌ File analysis error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Analysis failed: {str(e)}"
+        )
+
 
 
 # ─────────────────────────────────────────────────────────

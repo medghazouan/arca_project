@@ -1,0 +1,58 @@
+{
+  "regulation_id": "REG_5EF17D99CB5A",
+  "regulation_title": "Untitled Regulation",
+  "date_of_law": "2025-06-01",
+  "date_processed": "2025-12-05",
+  "total_risks_flagged": 5,
+  "risks": [
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy describes the existence and communication of emergency procedures but lacks any explicit mention of the regulatory requirement to establish them within a 30-day timeframe.",
+      "conflicting_policy_excerpt": "Emergency procedures are defined and communicated (fire, evacuation, accident, medical emergency, etc.).",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the internal policy to explicitly state the requirement for establishing emergency procedures within 30 days, aligning with the new regulation's timeline."
+    },
+    {
+      "policy_id": "personal_data_protection_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy does not explicitly mention the establishment of emergency procedures or a specific timeframe for their implementation, which is a mandatory requirement of the new regulation.",
+      "conflicting_policy_excerpt": "## 8. Data security\nThe Company implements technical and organisational measures appropriate to the risks, including but not limited to:",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the data security policy to explicitly include the requirement to establish emergency procedures within 30 days, detailing their scope and implementation timeline."
+    },
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy mentions 'emergency plans' but does not explicitly state the establishment of 'emergency procedures' or address the 30-day deadline mandated by the new regulation.",
+      "conflicting_policy_excerpt": "Organisational measures: work procedures, rotation of tasks, limitation of exposure times, emergency plans;",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the policy to explicitly state the company's commitment to establish emergency procedures and include the 30-day deadline for their implementation."
+    },
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy excerpt completely omits the company's explicit obligation to establish emergency procedures, a direct and time-bound requirement of the new regulation, posing a significant compliance risk.",
+      "conflicting_policy_excerpt": "The provided policy excerpt does not contain any provision for the establishment of emergency procedures by the company.",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Immediately update the internal policy to explicitly mandate the establishment of emergency procedures by the company, including a clear timeline for compliance."
+    },
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy excerpt discusses discretionary 'preventive measures' and lacks the mandatory requirement to establish 'emergency procedures' within a specific timeframe as mandated by the new regulation.",
+      "conflicting_policy_excerpt": "2. **Preventive measures** Depending on the risks identified, the Company may implement, in particular:",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the policy to explicitly mandate the establishment of emergency procedures within 30 days, aligning with the new regulation's requirements."
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}

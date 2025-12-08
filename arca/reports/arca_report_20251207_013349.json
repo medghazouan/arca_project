@@ -1,0 +1,26 @@
+{
+  "regulation_id": "REG_70F6F0C49987",
+  "regulation_title": "Untitled Regulation",
+  "date_of_law": "2025-06-01",
+  "date_processed": "2025-12-07",
+  "total_risks_flagged": 1,
+  "risks": [
+    {
+      "policy_id": "data_retention_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy allows for employee personal data retention for the duration of employment and potentially several years, directly contradicting the new regulation's 4-month limit.",
+      "conflicting_policy_excerpt": "**Employee data**: For the duration of the employment contract, then for additional periods as required by law (for example, payroll or social security documents may need to be kept for several years).",
+      "new_rule_excerpt": "the information personal of an employee will be saved for 4 months",
+      "recommendation": "Immediately revise the 'Employee data' retention policy to ensure 'information personal of an employee' is not retained beyond 4 months, unless specific legal exceptions are explicitly defined and permissible under the new regulation."
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}

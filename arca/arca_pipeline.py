@@ -285,6 +285,83 @@ def analyze_regulation_from_file(
     )
 
 
+def analyze_regulation_from_file_smart(
+    file_path: str,
+    date_of_law: str = None,
+    regulation_title: str = None,
+    summarize: bool = True
+) -> Dict[str, Any]:
+    """
+    Smart file analysis: Supports PDF and TXT files with automatic processing
+    
+    Features:
+    - Extracts text from PDF or TXT files
+    - Cleans text (removes artifacts, page numbers, etc.)
+    - Summarizes long documents (if > 2000 words)
+    - Analyzes with ARCA pipeline
+    
+    Usage:
+        result = analyze_regulation_from_file_smart(
+            file_path="regulations/gdpr_amendment.pdf",
+            date_of_law="2025-06-01",
+            regulation_title="GDPR Amendment 2025",
+            summarize=True
+        )
+    
+    Args:
+        file_path: Path to PDF or TXT file
+        date_of_law: Date in YYYY-MM-DD format (optional)
+        regulation_title: Title of regulation (optional, uses filename if not provided)
+        summarize: Auto-summarize if text exceeds 2000 words (default: True)
+    
+    Returns:
+        Complete JSON report from ARCA analysis
+    """
+    from document_processor import DocumentProcessor
+    
+    print("\n" + "=" * 80)
+    print("📄 SMART FILE ANALYSIS MODE")
+    print("=" * 80)
+    print(f"File: {file_path}")
+    print(f"Summarization: {'Enabled' if summarize else 'Disabled'}")
+    print("=" * 80)
+    
+    # Step 1: Process document
+    processor = DocumentProcessor()
+    doc_result = processor.process_document(
+        file_path=file_path,
+        summarize=summarize,
+        max_words=2000
+    )
+    
+    # Use filename as title if not provided
+    if regulation_title is None:
+        regulation_title = os.path.splitext(doc_result['original_file'])[0]
+    
+    # Step 2: Run ARCA analysis on processed text
+    arca = ARCASystem()
+    
+    print("\n" + "🔄 Passing processed text to ARCA pipeline...")
+    
+    analysis_result = arca.analyze_regulation(
+        new_regulation_text=doc_result['processed_text'],
+        date_of_law=date_of_law,
+        regulation_title=regulation_title
+    )
+    
+    # Add document processing metadata to the result
+    analysis_result['document_metadata'] = {
+        'source_file': doc_result['original_file'],
+        'file_type': doc_result['file_type'],
+        'original_word_count': len(doc_result['raw_text'].split()),
+        'processed_word_count': doc_result['word_count'],
+        'was_summarized': doc_result['was_summarized']
+    }
+    
+    return analysis_result
+
+
+
 # ─────────────────────────────────────────────────────────
 # EXAMPLE USAGE & TESTING
 # ─────────────────────────────────────────────────────────
