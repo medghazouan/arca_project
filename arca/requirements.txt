@@ -1,0 +1,52 @@
+# ARCA System Dependencies
+# Python 3.10+ required
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CORE DEPENDENCIES (Phase 1 & 2)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# LangChain ecosystem
+langchain==0.3.16
+langchain-community==0.3.16
+langchain-core==0.3.28
+langchain-text-splitters==0.3.4
+langchain-google-genai==2.1.0
+langchain-huggingface==0.1.2
+
+# Embeddings & Vector Store
+sentence-transformers==3.3.1
+faiss-cpu==1.9.0.post1
+huggingface-hub==0.27.1
+
+# LLM Provider (Free Tier)
+google-generativeai==0.8.3
+
+# Environment & Utilities
+python-dotenv==1.0.1
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# API DEPENDENCIES (Phase 3)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# FastAPI & Server
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.5
+python-multipart==0.0.20
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# OPTIONAL DEPENDENCIES
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# PDF Processing (if using law_analyzer.py)
+pdfplumber==0.11.4
+
+# Testing & Development
+pytest==8.3.4
+pytest-asyncio==0.24.0
+httpx==0.28.1  # For testing FastAPI endpoints
+
+# Code Quality (optional)
+black==24.10.0
+flake8==7.1.1
+mypy==1.14.1

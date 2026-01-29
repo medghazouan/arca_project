@@ -1,0 +1,58 @@
+{
+  "regulation_id": "REG_0395F90F976B",
+  "regulation_title": "l",
+  "date_of_law": "2025-12-18",
+  "date_processed": "2025-12-07",
+  "total_risks_flagged": 5,
+  "risks": [
+    {
+      "policy_id": "working_time_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy excerpt is silent on all mandatory requirements of the new regulation, including workplace safety protocols, health insurance, and employee data protection, indicating a significant policy gap.",
+      "conflicting_policy_excerpt": "- Employees must comply with their assigned working schedules, record their working time honestly and report any situation likely to exceed legal limits.",
+      "new_rule_excerpt": "All companies must implement workplace safety protocols. Employers must provide health insurance to all employees. Employers must protect employee personal data.",
+      "recommendation": "Develop comprehensive internal policies addressing all mandatory requirements of the new regulation, including workplace safety, health insurance, data protection, emergency procedures, and audit requirements, to ensure full compliance by December 31, 2025."
+    },
+    {
+      "policy_id": "personal_data_protection_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy excerpt is critically deficient, failing to address numerous mandatory requirements of the new regulation, including workplace safety protocols, health insurance provision, encryption of all employee records, and audit requirements.",
+      "conflicting_policy_excerpt": "- **Managers** ensure that the policy is applied within their teams and that staff are aware of their obligations. - **All employees and users** who have access to personal data must comply with this policy and the related procedures.",
+      "new_rule_excerpt": "All companies must implement workplace safety protocols. Employers must provide health insurance to all employees. Companies shall encrypt all employee records. Annual audits are mandatory for all companies.",
+      "recommendation": "Conduct a comprehensive gap analysis of all relevant internal policies against the new regulation and develop new or updated policies to explicitly address all mandatory requirements, especially workplace safety, health insurance, data encryption, and audit procedures."
+    },
+    {
+      "policy_id": "personal_data_protection_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy's general data security measures do not explicitly mandate encryption for all employee records as required by the new regulation.",
+      "conflicting_policy_excerpt": "The Company implements technical and organisational measures appropriate to the risks, including but not limited to:",
+      "new_rule_excerpt": "Companies shall encrypt all employee records.",
+      "recommendation": "Update the data security policy to explicitly state that all employee records must be encrypted to comply with Article 3 of the new regulation."
+    },
+    {
+      "policy_id": "information_systems_security_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy excerpt is critically deficient, failing to address numerous mandatory requirements of the new regulation, including comprehensive workplace safety, health insurance, emergency procedures, annual audits, and the specific encryption of all employee records.",
+      "conflicting_policy_excerpt": "Protect the confidentiality, integrity and availability of information; Comply with legal and contractual obligations (personal data protection, professional secrecy, confidentiality clauses, etc.);",
+      "new_rule_excerpt": "Companies shall encrypt all employee records.",
+      "recommendation": "Urgently update the internal policy to incorporate all mandatory requirements from the new regulation, specifically adding sections for workplace safety, health insurance, emergency procedures, annual audits, and the explicit mandate for encrypting all employee records."
+    },
+    {
+      "policy_id": "working_time_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy excerpt does not address any of the mandatory requirements outlined in the new regulation, such as workplace safety protocols, health insurance, data protection, or audit requirements, indicating a significant gap in coverage.",
+      "conflicting_policy_excerpt": "3. **Recording of working time** - Managers must ensure that working time is recorded using the system chosen by the Company (badge, timesheet, digital tool, etc.). - Any anomaly or inconsistency in time records must be investigated and corrected without undue delay. ## 4. Breaks and rest periods",
+      "new_rule_excerpt": "All companies must implement workplace safety protocols. Employers must provide health insurance to all employees. Companies shall encrypt all employee records. Annual audits are mandatory for all companies.",
+      "recommendation": "Conduct a comprehensive review of all company policies to ensure full alignment and explicit coverage of all articles within the new Employment Regulations, particularly regarding workplace safety, health insurance, data protection, and audit requirements."
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}

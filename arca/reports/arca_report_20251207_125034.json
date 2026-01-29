@@ -1,0 +1,58 @@
+{
+  "regulation_id": "REG_5EF17D99CB5A",
+  "regulation_title": "Untitled Regulation",
+  "date_of_law": "2025-06-01",
+  "date_processed": "2025-12-07",
+  "total_risks_flagged": 5,
+  "risks": [
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy describes the existence and communication of emergency procedures but lacks any explicit mention of the regulatory requirement to establish them within a 30-day timeframe.",
+      "conflicting_policy_excerpt": "Emergency procedures are defined and communicated (fire, evacuation, accident, medical emergency, etc.).",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the internal policy to explicitly state the requirement for establishing emergency procedures within 30 days, aligning with the new regulation's timeline."
+    },
+    {
+      "policy_id": "personal_data_protection_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy does not explicitly mention the establishment of emergency procedures or a specific timeframe for their implementation, which is a mandatory requirement of the new regulation.",
+      "conflicting_policy_excerpt": "## 8. Data security\nThe Company implements technical and organisational measures appropriate to the risks, including but not limited to:",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the data security policy to explicitly include the requirement to establish emergency procedures within 30 days, detailing their scope and implementation timeline."
+    },
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy mentions \"emergency plans\" but lacks the explicit requirement to establish \"emergency procedures\" and, critically, does not specify a 30-day deadline for their establishment as mandated by the new regulation.",
+      "conflicting_policy_excerpt": "Organisational measures: work procedures, rotation of tasks, limitation of exposure times, emergency plans;",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Revise the internal policy to explicitly require the establishment of \"emergency procedures\" and incorporate the 30-day deadline for their implementation, ensuring alignment with the new regulation."
+    },
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy excerpt does not explicitly state that the company has established or will establish emergency procedures, as mandated by the new regulation.",
+      "conflicting_policy_excerpt": "The health and safety function or designated persons (where applicable) support the implementation of preventive measures, risk assessments and awareness actions.",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the internal policy to explicitly state the company's commitment and timeline for establishing emergency procedures, aligning with the 30-day regulatory requirement."
+    },
+    {
+      "policy_id": "workplace_health_safety_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy lacks any mention of mandatory emergency procedures or a timeline for their establishment, making it non-compliant with the new regulation's explicit requirements.",
+      "conflicting_policy_excerpt": "2. **Preventive measures** Depending on the risks identified, the Company may implement, in particular:",
+      "new_rule_excerpt": "Companies shall establish emergency procedures within 30 days",
+      "recommendation": "Update the internal policy to explicitly mandate the establishment of emergency procedures within 30 days, aligning with the new regulation."
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}
