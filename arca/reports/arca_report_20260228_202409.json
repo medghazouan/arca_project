@@ -1,0 +1,58 @@
+{
+  "regulation_id": "REG_EC9D8610F102",
+  "regulation_title": "New Regulation",
+  "date_of_law": "2026-02-28",
+  "date_processed": "2026-02-28",
+  "total_risks_flagged": 5,
+  "risks": [
+    {
+      "policy_id": "working_time_policy_morocco_en",
+      "severity": "MEDIUM",
+      "divergence_summary": "The internal policy excerpt exclusively focuses on employee responsibilities regarding working hours, creating a significant gap by not addressing any of the employer's mandatory obligations outlined in the new regulation.",
+      "conflicting_policy_excerpt": "Employees must comply with their assigned working schedules, record their working time honestly and report any situation likely to exceed legal limits.",
+      "new_rule_excerpt": "All companies must implement workplace safety protocols. Employers must provide health insurance to all employees. Companies shall encrypt all employee records.",
+      "recommendation": "Legal team must draft and implement comprehensive policies addressing all mandatory employer obligations outlined in the new regulation, including workplace safety, health insurance, data protection, emergency procedures, audits, and record-keeping."
+    },
+    {
+      "policy_id": "personal_data_protection_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy excerpt, while mentioning compliance with data protection, completely omits the mandatory regulatory requirement for companies to encrypt all employee records.",
+      "conflicting_policy_excerpt": "All employees and users who have access to personal data must comply with this policy and the related procedures.",
+      "new_rule_excerpt": "Companies shall encrypt all employee records.",
+      "recommendation": "Update the internal data protection policy to explicitly state the company's obligation to encrypt all employee records, detailing the implementation plan."
+    },
+    {
+      "policy_id": "personal_data_protection_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy's general risk-based approach to data security measures diverges from the new regulation's mandatory and specific requirement to encrypt all employee records.",
+      "conflicting_policy_excerpt": "The Company implements technical and organisational measures appropriate to the risks, including but not limited to:",
+      "new_rule_excerpt": "Companies shall encrypt all employee records.",
+      "recommendation": "Update the 'Data security' section of the internal policy to explicitly mandate the encryption of all employee records, aligning with Article 3 of the new regulation."
+    },
+    {
+      "policy_id": "information_systems_security_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy critically lacks provisions for workplace safety protocols, emergency procedures, mandatory health insurance, specific encryption for employee records, and audit requirements as mandated by the new regulation.",
+      "conflicting_policy_excerpt": "Protect the confidentiality, integrity and availability of information; Comply with legal and contractual obligations (personal data protection, professional secrecy, confidentiality clauses, etc.);",
+      "new_rule_excerpt": "All companies must implement workplace safety protocols. Employers must provide health insurance to all employees. Companies shall encrypt all employee records.",
+      "recommendation": "Revise the internal policy to incorporate comprehensive sections addressing workplace safety, health insurance, emergency procedures, specific data encryption requirements for employee records, audit requirements, and compliance record retention as per the new regulation."
+    },
+    {
+      "policy_id": "working_time_policy_morocco_en",
+      "severity": "HIGH",
+      "divergence_summary": "The internal policy excerpt fails to address several mandatory regulatory requirements, including workplace safety protocols, emergency procedures, health insurance, employee personal data protection (especially encryption of records), annual audits, and compliance record retention.",
+      "conflicting_policy_excerpt": "3. Recording of working time - Managers must ensure that working time is recorded using the system chosen by the Company (badge, timesheet, digital tool, etc.). Any anomaly or inconsistency in time records must be investigated and corrected without undue delay.",
+      "new_rule_excerpt": "Employers must protect employee personal data. Companies shall encrypt all employee records.",
+      "recommendation": "The legal team must conduct a comprehensive review of all internal policies to incorporate mandatory requirements for workplace safety, health insurance, emergency procedures, data protection (including encryption), annual audits, and record retention as per the new regulation."
+    }
+  ],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}

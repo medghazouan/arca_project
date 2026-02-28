@@ -1,0 +1,17 @@
+{
+  "regulation_id": "REG_3481F079A716",
+  "regulation_title": "llll",
+  "date_of_law": "2026-01-29",
+  "date_processed": "2026-01-29",
+  "total_risks_flagged": 0,
+  "risks": [],
+  "metadata": {
+    "total_policies_analyzed": 5,
+    "analysis_engine": "ARCA v1.0",
+    "agents_used": [
+      "PolicyResearcher",
+      "ComplianceAuditor",
+      "ReportGenerator"
+    ]
+  }
+}
